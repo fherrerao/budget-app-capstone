@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /groups or /groups.json
   def index
@@ -22,6 +23,7 @@ class GroupsController < ApplicationController
   # POST /groups or /groups.json
   def create
     @group = Group.new(group_params)
+    @group.user_id = current_user.id
 
     respond_to do |format|
       if @group.save
