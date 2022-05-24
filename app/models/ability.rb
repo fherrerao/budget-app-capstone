@@ -10,7 +10,7 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :manage, :groups, user_id: user.id
+      can :manage, Group, user_id: user.id
     end
     
     # The first argument to `can` is the action you are giving the user
