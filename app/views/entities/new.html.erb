@@ -1,4 +1,4 @@
-<h1>New Transaction</h1>
+<%= render 'header'%>
 
 <%= form_with model: @entity, url: group_entities_path do |form| %>
   <% if @entity.errors.any? %>
@@ -12,18 +12,16 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mt-5 mb-3 container">    
+    <%= form.text_field :name, placeholder: "Name", class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount %>
+  <div class="my-3 container">    
+    <%= form.number_field :amount, placeholder: "Amount", class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.submit 'Save transaction' %>
+  <div class="actions my-3 p-3 bg-success d-grid container">
+    <%= form.submit 'NEW TRANSACTION', class: "btn btn-success" %>
   </div>
 <% end %>
 

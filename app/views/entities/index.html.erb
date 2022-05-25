@@ -1,4 +1,4 @@
-<h1 class="text-center">Transactions</h1>
+<%= render 'header'%>
 
 <div id="transactions">
   <% @entities.each do |entity| %>
@@ -7,5 +7,6 @@
   <% end %>
 </div>
 
-<%= link_to 'New transaction', new_group_entity_path%>
-<%= link_to 'Back to categories', groups_path%>
+<div class="actions my-3 p-3 bg-success d-grid container">
+  <%= link_to 'New transaction', new_group_entity_path, class: "btn btn-success"%>        
+</div>
