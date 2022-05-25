@@ -1,8 +1,4 @@
-<div id="<%= dom_id entity %>" class="d-flex justify-content-around align-items-center mt-4">    
-    <p>
-      <%= entity.name %>
-    </p>  
-    <p>
-      <%= entity.amount %>
-    </p>
+<div id="<%= dom_id entity %>" class="d-flex justify-content-between container align-items-center mt-4 my-3 bg-light">            
+    <p><%= entity.name %></p>  
+    <strong>$<%= entity.amount %></strong>
 </div>
