@@ -1,4 +1,11 @@
-<%= button_to "Sign in ", new_user_session_path, class: 'btn btn-outline-primary'%>
-<%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-primary'%>
-
-<h1>Welcome to my app</h1>
+<div class="d-flex justify-content-around gap-2 m-0 p-2 align-items-center bg-primary">
+  <p class="m-0 text-light"> Fast Delivery</p>
+  <div>
+    <%= link_to "Sign in ", new_user_session_path, class: 'btn btn-outline-light'%>
+    <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-outline-light'%>
+  </div>
+</div>
+<div class="d-flex flex-column align-items-center justify-content-center" style= "height: 70vh">
+  <h1>Fast Delivery!</h1>
+  <%= image_tag "delivery.jpg", width: 250 %>
+</div>
