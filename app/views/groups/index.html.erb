@@ -1,12 +1,18 @@
-<h1 class="text-center">Categories</h1>
+<%= render 'header'%>
 
 <div id="groups">
   <% @groups.each do |group| %>
     <%= render group %>
-    <p>
+    <%
+=begin%>
+ <p>
       <%= link_to "Show this group", group %>
-    </p>
+    </p> 
+<%
+=end%>
   <% end %>
 </div>
 
-<%= link_to "New group", new_group_path, class: "btn btn-primary" %>
+<div class="actions my-3 p-3 bg-success d-grid container">
+  <%= link_to "New group", new_group_path, class: "btn btn-success" %>    
+</div>

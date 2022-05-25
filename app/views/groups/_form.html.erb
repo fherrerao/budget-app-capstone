@@ -11,17 +11,16 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mt-5 mb-3 container">    
+    <%= form.text_field :name, placeholder: "Name", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.file_field :icon %>
+  
+  <div class="my-3 container">    
+    <%= form.file_field :icon%>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="actions my-3 p-3 bg-success d-grid container">  
+    <%= form.submit "NEW CATEGORY", class: "btn btn-success" %>
   </div>
 <% end %>

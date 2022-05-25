@@ -1,10 +1,8 @@
-<div id="<%= dom_id group %>" class="d-flex justify-content-around align-items-center">  
-  <%= link_to group_entities_path(group.id) do %>
-    <p>
-      <%= image_tag group.icon, width: 150 if group.icon.attached? %>
-    </p>
-    <p>
-      <%= group.name %>
-    </p>
+<div id="<%= dom_id group %>" class="d-flex justify-content-around align-items-center bg-light m-3">  
+  <%= link_to group_entities_path(group.id), class:"text-decoration-none text-dark" do %>    
+      <div class="d-flex align-items-center gap-3 my-3">
+        <%= image_tag group.icon, width: 80 if group.icon.attached? %>    
+        <%= group.name %>
+      </div>
   <% end %>
 </div>
