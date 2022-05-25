@@ -3,7 +3,9 @@ class EntitiesController < ApplicationController
     @entities = current_user.entities.order(created_at: :desc)
                 .joins(:entity_groups)
                 .where(entity_groups: {group_id: params[:group_id]})
-                .order(created_at: :desc)
+                .order(created_at: :desc)                
+
+    @total_amount = @entities.sum(:amount)
   end
 
   def show
@@ -18,7 +20,7 @@ class EntitiesController < ApplicationController
 
   def create
     @entity = Entity.new(entity_params)
-    @entity.user_id = current_user.id
+    @entity.author_id = current_user.id
 
     
     respond_to do |format|
@@ -62,6 +64,6 @@ class EntitiesController < ApplicationController
     end
         
     def entity_params
-      params.require(:entity).permit(:name, :amount, :user_id)
+      params.require(:entity).permit(:name, :amount, :author_id)
     end
 end
