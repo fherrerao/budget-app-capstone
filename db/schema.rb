@@ -44,18 +44,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_033429) do
 
   create_table "entities", force: :cascade do |t|
     t.string "name"
-    t.float "amount"
+    t.decimal "amount"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_entities_on_user_id"
+    t.index ["author_id"], name: "index_entities_on_author_id"
   end
 
   create_table "entity_groups", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "entity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "entity_id", null: false
-    t.bigint "group_id", null: false
     t.index ["entity_id"], name: "index_entity_groups_on_entity_id"
     t.index ["group_id"], name: "index_entity_groups_on_group_id"
   end
@@ -63,10 +63,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_033429) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.decimal "total_amount", default: "0.0"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_groups_on_user_id"
+    t.index ["author_id"], name: "index_groups_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,8 +89,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_033429) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "entities", "users"
-  add_foreign_key "entity_groups", "entities"
-  add_foreign_key "entity_groups", "groups"
-  add_foreign_key "groups", "users"
+  add_foreign_key "entities", "users", column: "author_id", on_delete: :cascade
+  add_foreign_key "entity_groups", "entities", on_delete: :cascade
+  add_foreign_key "entity_groups", "groups", on_delete: :cascade
+  add_foreign_key "groups", "users", column: "author_id", on_delete: :cascade
 end

@@ -1,5 +1,5 @@
 class AddUserRefToEntities < ActiveRecord::Migration[7.0]
-  def change
-    add_reference :entities, :user, null: false, foreign_key: true
+  def change    
+    add_foreign_key :entities, :users, column: :author_id, on_delete: :cascade
   end
 end
