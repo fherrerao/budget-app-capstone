@@ -1,15 +1,16 @@
-<h2>Forgot your password?</h2>
+<div class="d-flex justify-content-around gap-2 m-0 p-2 align-items-center bg-primary mb-5">
+  <h2 class="text-light">FORGOT YOUR PASSWORD?</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field my-3 container">    
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="actions my-3 p-3 bg-success d-grid container">
+    <%= f.submit "RESET PASSWORD", class: "btn btn-success" %>
   </div>
 <% end %>
 

@@ -1,15 +1,16 @@
-<h2>Resend confirmation instructions</h2>
+<div class="d-flex justify-content-around gap-2 m-0 p-2 align-items-center bg-primary mb-5">
+  <h2 class="text-light">RESEND INSTRUCTIONS</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+  <div class="field my-3 container">    
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class:"form-control", placeholder: "Email" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+  <div class="actions my-3 p-3 bg-success d-grid container">
+    <%= f.submit "RESEND INSTRUCTIONS", class: "btn btn-success" %>
   </div>
 <% end %>
 
