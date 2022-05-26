@@ -1,7 +1,9 @@
 <%= render 'header'%>
+<p style="color: green" class="notice m-0"><%= notice %></p>
+<p style="color: red" class="alert m-0"><%= alert %></p>
 
 <div id="transactions">
-  <div class="d-flex align-items-center justify-content-between container bg-light my-3">
+  <div class="d-flex align-items-center justify-content-between container bg-light">
     <p class="fs-3 text m-0">Total category: </p>
     <strong class="text-center my-3 fs-3 text"> $<%= @total_amount %></strong>    
   </div>

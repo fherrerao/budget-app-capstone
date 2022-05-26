@@ -1,9 +1,11 @@
 <%= render 'header'%>
+<p style="color: green" class="notice m-0"><%= notice %></p>
+<p style="color: red" class="alert m-0"><%= alert %></p>
 
 <%= form_with model: @entity, url: group_entities_path do |form| %>
   <% if @entity.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(@entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
+      <h2><%= pluralize(@entity.errors.count, "error") %> prohibited this transaction from being saved:</h2>
       <ul>
         <% @entity.errors.each do |error| %>
           <li><%= error.full_message %></li>

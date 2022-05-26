@@ -9,7 +9,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body>  
+  <body>
     <%= yield %>
+    <p style="color: green" class="notice m-0"><%= notice %></p>
+    <p style="color: red" class="alert m-0"><%= alert %></p>
   </body>
 </html>

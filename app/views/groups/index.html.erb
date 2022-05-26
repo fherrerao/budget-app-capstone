@@ -1,16 +1,15 @@
 <%= render 'header'%>
-
+<p style="color: green" class="notice m-0"><%= notice %></p>
+<p style="color: red" class="alert m-0"><%= alert %></p>
 <div id="groups">  
   <% @groups.each do |group| %>
     <%= render group%>
-
-    
-    
-    <%
+ 
+ <%
 =begin%>
  <p>
       <%= link_to "Show this group", group %>
-    </p> 
+    </p>   
 <%
 =end%>
   <% end %>
