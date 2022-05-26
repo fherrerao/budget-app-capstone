@@ -180,9 +180,12 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-The ideas and inspiration from this project are coming from this online school of software development:
+- Original design idea by: [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
-## [**Microverse**](https://www.microverse.org/)
+- The ideas and inspiration from this project are coming from this online school of software development:
+  ### [Microverse](https://www.microverse.org/)
+
+
 <hr>
 
 ## 📝 License
