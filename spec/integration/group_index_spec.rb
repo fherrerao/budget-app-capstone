@@ -2,29 +2,29 @@ require 'rails_helper'
 
 RSpec.describe 'Group Index', type: :system do
   before(:all) do
-    User.destroy_all   
-    
+    User.destroy_all
+
     @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')
     @user.skip_confirmation!
     @user.save!
 
-    @group = Group.new(name: 'Campero', total_amount: 122 , author_id: @user.id)
+    @group = Group.new(name: 'Campero', total_amount: 122, author_id: @user.id)
     @group.save!
   end
 
   describe 'log in' do
-    before:each do
+    before :each do
       visit new_user_session_path
       fill_in 'Email', with: 'first@email.com'
       fill_in 'Password', with: '123456'
       click_button 'LOG IN'
     end
 
-    it 'should display Categories'do
+    it 'should display Categories' do
       expect(page).to have_content('Categories')
     end
 
-    it 'should display the group index page' do      
+    it 'should display the group index page' do
       expect(page).to have_content('Campero')
     end
 
@@ -41,5 +41,4 @@ RSpec.describe 'Group Index', type: :system do
       expect(page).to have_current_path(new_group_path)
     end
   end
-
 end

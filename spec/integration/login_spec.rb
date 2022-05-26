@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'Login', type: :system do
   before(:all) do
-    User.destroy_all   
-    
+    User.destroy_all
+
     @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')
     @user.skip_confirmation!
     @user.save!
   end
 
   describe 'visit log in' do
-    before:each do
+    before :each do
       visit new_user_session_path
     end
 
@@ -19,7 +19,6 @@ RSpec.describe 'Login', type: :system do
       expect(page).to have_content('Forgot your password?')
       expect(page).to have_content("Didn't receive confirmation instructions?")
     end
-
 
     it 'is valid with valid attributes' do
       fill_in 'Email', with: 'first@email.com'
@@ -40,5 +39,4 @@ RSpec.describe 'Login', type: :system do
       expect(page).to have_content('Invalid Email or password.')
     end
   end
-
 end

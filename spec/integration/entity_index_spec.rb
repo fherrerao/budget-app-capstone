@@ -9,7 +9,7 @@ RSpec.describe 'Entity Index', type: :system do
     @user.skip_confirmation!
     @user.save!
 
-    @group = Group.new(name: 'Campero', total_amount: 122 , author_id: @user.id)
+    @group = Group.new(name: 'Campero', total_amount: 122, author_id: @user.id)
     @group.save!
 
     @entity = Entity.new(name: 'Coca Cola', amount: 12, author_id: @user.id)
@@ -20,7 +20,7 @@ RSpec.describe 'Entity Index', type: :system do
   end
 
   describe 'log in' do
-    before:each do
+    before :each do
       visit new_user_session_path
       fill_in 'Email', with: 'first@email.com'
       fill_in 'Password', with: '123456'
@@ -43,9 +43,9 @@ RSpec.describe 'Entity Index', type: :system do
     it 'should have the amount of the category' do
       expect(page).to have_content('$12.0')
     end
-    
+
     it 'should have a button to add a new transaction' do
-      expect(page).to have_link('New transaction')      
+      expect(page).to have_link('New transaction')
     end
 
     it 'should redirect to the new transaction page' do

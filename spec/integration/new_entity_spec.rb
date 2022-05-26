@@ -11,7 +11,7 @@ RSpec.describe 'New Entity', type: :system do
     @user.skip_confirmation!
     @user.save!
 
-    @group = Group.new(name: 'Campero', total_amount: 122 , author_id: @user.id)
+    @group = Group.new(name: 'Campero', total_amount: 122, author_id: @user.id)
     @group.save!
 
     @entity = Entity.new(name: 'Coca Cola', amount: 12, author_id: @user.id)
@@ -22,8 +22,8 @@ RSpec.describe 'New Entity', type: :system do
   end
 
   describe 'create new entity' do
-    before:each do
-      visit new_user_session_path      
+    before :each do
+      visit new_user_session_path
       fill_in 'Email', with: 'first@email.com'
       fill_in 'Password', with: '123456'
       click_button 'LOG IN'

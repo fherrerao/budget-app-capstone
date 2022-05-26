@@ -7,11 +7,11 @@ RSpec.describe 'New Group', type: :system do
 
     @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')
     @user.skip_confirmation!
-    @user.save!    
+    @user.save!
   end
 
   describe 'create new category' do
-    before:each do
+    before :each do
       visit new_user_session_path
       fill_in 'Email', with: 'first@email.com'
       fill_in 'Password', with: '123456'
@@ -29,7 +29,7 @@ RSpec.describe 'New Group', type: :system do
 
     it 'should have a name field' do
       expect(page).to have_field('Name')
-    end    
+    end
 
     it 'should have a button to create a new category' do
       expect(page).to have_button('NEW CATEGORY')
@@ -40,6 +40,5 @@ RSpec.describe 'New Group', type: :system do
       click_button 'NEW CATEGORY'
       expect(page).to have_content('Name can\'t be blank')
     end
-
   end
 end
