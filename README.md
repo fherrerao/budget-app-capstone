@@ -19,6 +19,7 @@
 
 - [Description](#description)
 - [Built With](#built-with)
+- [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
   - [Clone Repo](#clone-repo)
   - [Prerequisites](#prerequisites)
@@ -46,6 +47,10 @@
 - Frameworks: Ruby on Rails.
 - Tools & Methods: RSpec, Capybara, PostgreSQL, Devise, CanCanCan.
 <hr>
+
+## Live Demo
+
+Check this [Live Demo](https://fierce-brook-65336.herokuapp.com/) of the page.
 
 ## Getting Started
 
