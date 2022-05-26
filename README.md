@@ -12,7 +12,7 @@
 ![ruby version](https://img.shields.io/badge/Ruby-3.x-orange)
 
 ## Preview
-![screenshot](./screenshot.png)
+![screenshot](./screenshoot.png)
 <hr>
 
 ## Table of Contents
