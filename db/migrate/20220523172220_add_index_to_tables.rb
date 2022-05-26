@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddIndexToTables < ActiveRecord::Migration[7.0]
   def change
     add_index :groups, :author_id

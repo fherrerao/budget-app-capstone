@@ -1,4 +1,4 @@
-class EntityGroups < ApplicationRecord  
+class EntityGroups < ApplicationRecord
   after_create :increase_total_amount
   belongs_to :entity
   belongs_to :group
