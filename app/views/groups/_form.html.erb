@@ -11,13 +11,17 @@
     </div>
   <% end %>
 
+  <div class="container">
+    <strong>NEW CATEGORY</strong>
+  </div>
+
   <div class="mt-5 mb-3 container">    
     <%= form.text_field :name, placeholder: "Name", class: "form-control" %>
   </div>
 
   
-  <div class="my-3 container">    
-    <%= form.file_field :icon%>
+  <div class="my-5 container">    
+    <%= form.file_field :avatar%>
   </div>
 
   <div class="actions p-3 bg-success d-grid container fixed-bottom">  
