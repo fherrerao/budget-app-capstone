@@ -4,7 +4,7 @@ RSpec.describe Group, type: :model do
   before :all do
     User.destroy_all
     @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456',
-                     password_confirmation: '123456')    
+                     password_confirmation: '123456')
     @user.save!
   end
 

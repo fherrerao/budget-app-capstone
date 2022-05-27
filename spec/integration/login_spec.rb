@@ -4,7 +4,7 @@ RSpec.describe 'Login', type: :system do
   before(:all) do
     User.destroy_all
 
-    @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')    
+    @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')
     @user.save!
   end
 
@@ -15,7 +15,7 @@ RSpec.describe 'Login', type: :system do
 
     it 'should be able to login' do
       expect(page).to have_content('Sign up')
-      expect(page).to have_content('Forgot your password?')      
+      expect(page).to have_content('Forgot your password?')
     end
 
     it 'is valid with valid attributes' do
