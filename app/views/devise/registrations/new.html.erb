@@ -1,4 +1,4 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, html: { 'data-turbo': 'false' }, url: registration_path(resource_name)) do |f| %>
   <div class="d-flex justify-content-between gap-2 m-0 p-2 align-items-center bg-primary mb-5">
     <%= link_to '<', root_path, class: "text-light text-decoration-none fs-1 text me-5"%>
     <h2 class="text-light m-0">REGISTER</h2>  
