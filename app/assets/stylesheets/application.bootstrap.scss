@@ -1,8 +1,8 @@
-.btn-success {
-  color: #fff;
-  background-color: #b52424;
-  border-color: #fff;
-}
+$primary: #3778c2;
+$success: #5fb523;
+$secondary: #f1f2f3;
 
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+$font-family-monospace: 'Playball', sans-serif;
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';

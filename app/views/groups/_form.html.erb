@@ -21,10 +21,10 @@
 
   
   <div class="my-5 container">    
-    <%= form.file_field :avatar%>
+    <%= form.file_field :avatar, class: 'form-control', required: true %>
   </div>
 
   <div class="actions p-3 bg-success d-grid container fixed-bottom">  
-    <%= form.submit "NEW CATEGORY", class: "btn btn-success" %>
+    <%= form.submit "SAVE CATEGORY", class: "btn btn-outline-light" %>
   </div>
 <% end %>
