@@ -1,0 +1,18 @@
+<%= render 'header'%>
+<p style="color: green" class="notice m-0"><%= notice %></p>
+<p style="color: red" class="alert m-0"><%= alert %></p>
+
+<div id="transactions">
+  <div class="d-flex align-items-center justify-content-between container bg-light">
+    <p class="fs-3 text m-0">Total category: </p>
+    <strong class="text-center my-3 fs-3 text"> $<%= @total_amount %></strong>    
+  </div>
+
+  <% @entities.each do |entity| %>
+    <%= render entity %>    
+  <% end %>
+</div>
+
+<div class="actions p-3 bg-success d-grid container fixed-bottom">
+  <%= link_to 'New transaction', new_group_entity_path, class: "btn btn-success"%>        
+</div>

@@ -1,0 +1,15 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<div class="d-flex justify-content-between gap-2 m-0 p-2 align-items-center bg-primary mb-5">
+    <%= link_to '<', root_path, class: "text-light text-decoration-none fs-1 text me-5"%>
+    <h2 class="text-light m-0">RESET PASSWORD</h2>  
+    <%= f.submit "Next", class: "btn text-light" %>      
+  </div>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field my-3 container">    
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
+  </div>  
+<% end %>
+
+<%= render "devise/shared/links" %>
