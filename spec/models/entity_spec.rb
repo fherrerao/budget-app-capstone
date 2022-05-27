@@ -6,8 +6,7 @@ RSpec.describe Entity, type: :model do
     Group.destroy_all
 
     @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456',
-                     password_confirmation: '123456')
-    @user.skip_confirmation!
+                     password_confirmation: '123456')    
     @user.save!
 
     @group = Group.create(name: 'Campero', total_amount: 10.0, author_id: @user.id)

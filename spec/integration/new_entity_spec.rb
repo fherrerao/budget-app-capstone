@@ -7,8 +7,7 @@ RSpec.describe 'New Entity', type: :system do
     Entity.destroy_all
     EntityGroups.destroy_all
 
-    @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')
-    @user.skip_confirmation!
+    @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')    
     @user.save!
 
     @group = Group.new(name: 'Campero', total_amount: 122, author_id: @user.id)
@@ -26,7 +25,7 @@ RSpec.describe 'New Entity', type: :system do
       visit new_user_session_path
       fill_in 'Email', with: 'first@email.com'
       fill_in 'Password', with: '123456'
-      click_button 'LOG IN'
+      click_button 'Next'
       visit new_group_entity_path(@group)
     end
 

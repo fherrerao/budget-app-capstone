@@ -5,8 +5,7 @@ RSpec.describe 'New Group', type: :system do
     User.destroy_all
     Group.destroy_all
 
-    @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')
-    @user.skip_confirmation!
+    @user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456', password_confirmation: '123456')    
     @user.save!
   end
 
@@ -15,7 +14,7 @@ RSpec.describe 'New Group', type: :system do
       visit new_user_session_path
       fill_in 'Email', with: 'first@email.com'
       fill_in 'Password', with: '123456'
-      click_button 'LOG IN'
+      click_button 'Next'
       click_link 'NEW CATEGORY'
     end
 
