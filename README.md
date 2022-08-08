@@ -50,7 +50,7 @@
 
 ## Live Demo
 
-Check this [Live Demo](https://fierce-brook-65336.herokuapp.com/) of the page.
+Check this [Live Demo](https://budget-app-cap.herokuapp.com) of the page.
 
 ## Getting Started
 
