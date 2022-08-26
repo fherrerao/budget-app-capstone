@@ -9,7 +9,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.destroy_all
-first_user = User.new(name: 'Kasuki', email: 'first@email.com', password: '123456',
+first_user = User.create(name: 'Kasuki', email: 'first@email.com', password: '123456',
                       password_confirmation: '123456')
-first_user.skip_confirmation!
-first_user.save!
