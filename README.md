@@ -50,7 +50,7 @@
 
 ## Live Demo
 
-Check this [Live Demo](https://budget-app-cap.herokuapp.com) of the page.
+Check this [Live Demo](https://budget-app.fly.dev/) of the page.
 
 ## Getting Started
 
